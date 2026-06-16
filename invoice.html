@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice Form</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="invoice-card">
+      <header class="invoice-header">
+        <div class="brand-block">
+          <img src="D:\project\Billing Software\Asset\Logo 2.jfif" alt="Logo" class="logo-placeholder"/>
+          <div>
+            <h1>சுபவிஷ்ணு</h1>
+            <p>வாடகை பாத்திரக்கடை,</p>
+            <p>சரவணக்குடில் அருகில், பொம்மையகவுண்டன்பட்டி,</p>
+            <p>வேல்முருகன் G </p>
+            <p class="muted">Phone:+91 98428 49921</p>
+          </div>
+        </div>
+        <div class="invoice-title">INVOICE</div>
+      </header>
+
+      <section class="invoice-details">
+        <div class="left-grid">
+          <label>
+            வாடிக்கையாளர் பெயர்:
+            <input type="text" placeholder="Full Name" id="customerName" />
+          </label>
+          <label>
+            முகவரி:
+            <input type="text" placeholder="Delivery/Billing Address" id="customerAddress" />
+          </label>
+          <label>
+            தொலைபேசி எண்:
+            <input type="text" placeholder="xxxxx xxxxx" id="customerPhone" />
+          </label>
+        </div>
+        <div class="right-grid">
+          <label>
+            INVOICE NO:
+            <input type="text" placeholder="001" id="invoiceNo" value="001" />
+          </label>
+          <label>
+            தேதி:
+            <input type="date" id="invoiceDate" />
+          </label>
+          <label>
+            திரும்பும் தேதி:
+            <input type="date" id="returnDate" />
+          </label>
+        </div>
+      </section>
+
+      <section class="items-table">
+        <div class="table-head">
+          <span>S.No</span>
+          <span>Product</span>
+          <span>Qnt</span>
+          <span>Rate</span>
+          <span>Total</span>
+          <span></span>
+        </div>
+
+        <div class="table-row">
+          <span>01</span>
+          <input type="text" placeholder="Product name or description" class="desc" data-row="1" />
+          <input type="number" min="0" value="0" class="qty" data-row="1" />
+          <input type="number" min="0" step="0.01" value="0" class="rate" data-row="1" />
+          <span class="amount" data-row="1">₹0.00</span>
+          <div class="row-actions">
+            <button class="add-btn" data-row="1">+</button>
+            <button class="remove-btn" data-row="1">−</button>
+          </div>
+        </div>
+
+        <div class="table-row">
+          <span>02</span>
+          <input type="text" placeholder="Product name or description" class="desc" data-row="2" />
+          <input type="number" min="0" value="0" class="qty" data-row="2" />
+          <input type="number" min="0" step="0.01" value="0" class="rate" data-row="2" />
+          <span class="amount" data-row="2">₹0.00</span>
+          <div class="row-actions">
+            <button class="add-btn" data-row="2">+</button>
+            <button class="remove-btn" data-row="2">−</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="bottom-grid">
+        <div class="date-card-grid">
+          <label>
+            RENT DATE
+            <input type="date" id="rentDate" />
+          </label>
+          <label>
+            RETURN DATE
+            <input type="date" id="returnDate" />
+          </label>
+        </div> -->
+
+        <div class="summary-card">
+          <div class="summary-row">
+            <span>Total Amount:</span>
+            <span class="summary-value" id="totalAmount">₹0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Advance Paid:</span>
+            <span class="summary-value negative">₹0.00</span>
+          </div>
+          <div class="summary-balance">
+            <span>Balance:</span>
+            <span id="balanceAmount">₹0.00</span>
+          </div>
+        </div>
+        <br></br>
+      </section>
+
+      <section class="note-section">
+        <label>NOTE:</label>
+        <div class="note-card">
+          <p>• வாடகைக்கு எடுத்த பொருட்கள் பாதுகாப்பாக திருப்பி ஒப்படைக்க வேண்டும்.</p>
+          <p>• சேதம் அல்லது பொருள் இழப்பு ஏற்பட்டால் கூடுதல் கட்டணம் வசூலிக்கப்படும்.</p>
+        </div>
+      </section>
+
+      <footer class="invoice-footer">
+        <button class="action-btn">Share</button>
+        <button id="printInvoiceBtn" class="action-btn primary">Print Invoice</button>
+      </footer>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
